@@ -1,0 +1,140 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-03T18:23:55.440Z",
+    "end": "2022-01-03T18:23:59.808Z",
+    "duration": 4368,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "88458d17-1a48-441a-843f-0a4cf0916fa0",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1bd636b0-38c8-4467-99ef-6494ad3cb6ab",
+          "title": "Test Suite",
+          "fullFile": "D:\\Trainings\\MochaSelenium\\Tests\\FirstMochaTest.js",
+          "file": "\\Tests\\FirstMochaTest.js",
+          "beforeHooks": [],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Test Suite\"",
+              "fullTitle": "Test Suite \"after each\" hook in \"Test Suite\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if(this.currentTest.state == 'failed'){\n    let imageFileName = this.currentTest.title + '.jpeg';\n    driver.takeScreenshot().then(\n        function(image){\n            require('fs').writeFileSync('./screenshots/' + imageFileName, image, 'base64')\n        }\n    )\n    addContext(this,'Following comes the failed test image')\n    addContext(this, '../screenshots/' + imageFileName)\n}",
+              "err": {},
+              "uuid": "19de46c8-f2e4-4707-bad4-0253aa197f80",
+              "parentUUID": "1bd636b0-38c8-4467-99ef-6494ad3cb6ab",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"Test Suite\"",
+              "fullTitle": "Test Suite \"after each\" hook in \"Test Suite\"",
+              "timedOut": false,
+              "duration": 61,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "f534588b-ddc2-4714-8c6e-f5d2919c97af",
+              "parentUUID": "1bd636b0-38c8-4467-99ef-6494ad3cb6ab",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Selenium check cookies dialog",
+              "fullTitle": "Test Suite Selenium check cookies dialog",
+              "timedOut": false,
+              "duration": 4285,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = new webdriver.Builder().forBrowser(\"chrome\").build();\nawait driver.get(\"http://www.google.com\")\nthis.AcceptButton = By.xpath(\"//*[text()='Zgadzam się']\")\nawait driver.wait(webdriver.until.elementLocated(this.AcceptButton), 5000)",
+              "err": {},
+              "uuid": "8356ec2a-45ad-4f9e-a2e6-0236c0c68e74",
+              "parentUUID": "1bd636b0-38c8-4467-99ef-6494ad3cb6ab",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8356ec2a-45ad-4f9e-a2e6-0236c0c68e74"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4285,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 6000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 6000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "SeleniumReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "./myReport",
+        "reportFilename": "SeleniumReport"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
